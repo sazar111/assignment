@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<link href=./style.css rel='stylesheet'>
+<meta charset="utf-8">
+<title>IP Assignment</title>
+</head>
+
+<body>
+        <div class='reg_banner'>
+            <h1>REGISTRATION</h1>
+        </div>
+            
+		<div class="mainbox">
+		
+		<img class="lbox1" id="a1" src="./resources/signin-image.jpg">	
+		
+		<form class="box2" id="b2">
+				<h2>PERSONAL DETAILS</h2>
+                <div>
+				    <input required type="text" placeholder="USER NAME">
+				    <input required type="email" placeholder="EMAIL">
+                    <input required id='p3' type="text" placeholder="NAME">
+                    <input required id='p1' type="password" placeholder="PASSWORD">
+                    <input required id='p2' type="password" onChange="validatePass()" placeholder="RE-ENTER PASSWORD">
+                </div>
+                <h2>ADDRESS</h2>
+                <div>
+				    <input required type="text" placeholder="CITY">
+                    <input required id="state" type="text" placeholder="STATE" onChange="validateState()">
+                    <input required type="text" placeholder="COUNTRY">
+				    <input required type="number" placeholder="PIN CODE">    
+                </div>
+                <button type="submit" class="submit">SUBMIT</button>
+		</form>
+</div>
+    <script>
+        function validatePass(){
+            var pass1= document.getElementById('p1');
+            var pass2= document.getElementById('p2');
+            
+            if (!(pass1.value === pass2.value)){
+                alert("Password Mismatch");
+                pass1.value='';
+                pass2.value='';
+            }
+        }
+        function validateState(){
+            var state= document.getElementById('state');
+            if ( state.value.length!==2){
+                alert("Length Must BE Equal to 2");
+                state.value= '';
+            }
+        }
+        
+    </script>
+</body>
+    
+</html>
