@@ -19,8 +19,8 @@
 				<h2>PERSONAL DETAILS</h2>
                 <div>
 				    <input required type="text" placeholder="USER NAME">
-				    <input required type="email" placeholder="EMAIL">
-                    <input required id='p3' type="text" placeholder="NAME">
+				    <input required id='p3' onChange="validateMail()" type="text" placeholder="EMAIL">
+                    <input required type="text" placeholder="NAME">
                     <input required id='p1' type="password" placeholder="PASSWORD">
                     <input required id='p2' type="password" onChange="validatePass()" placeholder="RE-ENTER PASSWORD">
                 </div>
@@ -45,6 +45,15 @@
                 pass2.value='';
             }
         }
+	function validateMail(){
+		var Mail= document.getElementById('p3');
+		if(^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$.test(Mail))
+                {
+			Mail.value="";
+                    alert("Invalid email Id !")
+                    return false ;
+                }
+	    }
         function validateState(){
             var state= document.getElementById('state');
             if ( state.value.length!==2){
